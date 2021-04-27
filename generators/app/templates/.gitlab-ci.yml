@@ -1,0 +1,37 @@
+stages:
+  - test
+  - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .yarn
+    - ~/.cache/Cypress
+    - .next/cache/
+
+test:
+  stage: test
+  type: test
+  image: cypress/browsers:node12.16.2-chrome81-ff75
+  script:
+    - yarn install
+    - yarn run cy:verify
+    - yarn run cy:info
+    - yarn build
+    - yarn test
+  tags:
+    - ci-army
+
+staging:
+  image: ruby:latest
+  type: deploy
+  script:
+  - gem install dpl -v 1.10.7
+  - dpl --provider=heroku --app=$APP_NAME --api-key=$HEROKU_API_KEY
+  environment:
+    name: staging
+    # url: https://APP_NAME.herokuapp.com/
+  only:
+  - master
+  tags:
+    - ci-army
