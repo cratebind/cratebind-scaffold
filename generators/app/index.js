@@ -7,7 +7,7 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
-    this.option('babel'); // This method adds support for a `--babel` flag
+    this.option('storybook'); // This method adds support for a `--babel` flag
   }
 
   prompting() {
@@ -22,16 +22,23 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true,
+        type: 'checkbox',
+        name: 'features',
+        message: 'What features would you like to add?',
+        choices: ['Storybook', 'Apollo', 'Cypress'],
       },
+      // {
+      //   type: 'confirm',
+      //   name: 'someAnswer',
+      //   message: 'Would you like to enable this option?',
+      //   default: true,
+      // },
     ];
 
     return this.prompt(prompts).then(props => {
+      console.log(props);
       // To access props later use this.props.someAnswer;
-      this.props = props;
+      this.features = props;
     });
   }
 
@@ -39,7 +46,17 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('**/*'), this.destinationRoot());
   }
 
+  features() {
+    if (this.features.includes('Storybook')) {
+      this.log('Adding Storybook');
+    }
+  }
+
   install() {
-    this.installDependencies();
+    this.installDependencies({
+      npm: false,
+      bower: false,
+      yarn: true,
+    });
   }
 };
