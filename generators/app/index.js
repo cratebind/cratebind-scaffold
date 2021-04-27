@@ -14,7 +14,7 @@ module.exports = class extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Welcome to the superb ${chalk.red('cratebind-scaffolder')} generator!`
+        `Welcome to the superb ${chalk.red('cratebind-scaffold')} generator!`
       )
     );
 

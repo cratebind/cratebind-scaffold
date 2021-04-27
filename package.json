@@ -1,5 +1,5 @@
 {
-  "name": "generator-cratebind-scaffolder",
+  "name": "generator-cratebind-scaffold",
   "version": "0.0.0",
   "description": "Project scaffolds for Cratebind",
   "homepage": "",
@@ -81,6 +81,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "matt-cratebind/generator-cratebind-scaffolder",
+  "repository": "matt-cratebind/generator-cratebind-scaffold",
   "license": "MIT"
 }

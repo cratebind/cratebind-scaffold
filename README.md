@@ -1,19 +1,19 @@
-# generator-cratebind-scaffolder [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-cratebind-scaffold [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Project scaffolds for Cratebind
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-cratebind-scaffolder using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-cratebind-scaffold using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-cratebind-scaffolder
+npm install -g generator-cratebind-scaffold
 ```
 
 Then generate your new project:
 
 ```bash
-yo cratebind-scaffolder
+yo cratebind-scaffold
 ```
 
 ## Getting To Know Yeoman
@@ -28,9 +28,9 @@ yo cratebind-scaffolder
 MIT © [Matt Wood]()
 
 
-[npm-image]: https://badge.fury.io/js/generator-cratebind-scaffolder.svg
-[npm-url]: https://npmjs.org/package/generator-cratebind-scaffolder
-[travis-image]: https://travis-ci.com/matt-cratebind/generator-cratebind-scaffolder.svg?branch=master
-[travis-url]: https://travis-ci.com/matt-cratebind/generator-cratebind-scaffolder
-[daviddm-image]: https://david-dm.org/matt-cratebind/generator-cratebind-scaffolder.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/matt-cratebind/generator-cratebind-scaffolder
+[npm-image]: https://badge.fury.io/js/generator-cratebind-scaffold.svg
+[npm-url]: https://npmjs.org/package/generator-cratebind-scaffold
+[travis-image]: https://travis-ci.com/matt-cratebind/generator-cratebind-scaffold.svg?branch=master
+[travis-url]: https://travis-ci.com/matt-cratebind/generator-cratebind-scaffold
+[daviddm-image]: https://david-dm.org/matt-cratebind/generator-cratebind-scaffold.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/matt-cratebind/generator-cratebind-scaffold
