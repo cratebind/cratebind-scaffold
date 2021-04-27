@@ -14,9 +14,7 @@ module.exports = class extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Welcome to the superb ${chalk.red(
-          'generator-cratebind-scaffolder'
-        )} generator!`
+        `Welcome to the superb ${chalk.red('cratebind-scaffolder')} generator!`
       )
     );
 
@@ -25,7 +23,11 @@ module.exports = class extends Generator {
         type: 'checkbox',
         name: 'features',
         message: 'What features would you like to add?',
-        choices: ['Storybook', 'Apollo', 'Cypress'],
+        choices: [
+          'Storybook',
+          // 'Apollo',
+          // 'Cypress'
+        ],
       },
       // {
       //   type: 'confirm',
@@ -35,20 +37,24 @@ module.exports = class extends Generator {
       // },
     ];
 
-    return this.prompt(prompts).then(props => {
-      console.log(props);
+    return this.prompt(prompts).then(({ features }) => {
+      // Console.log(props);
       // To access props later use this.props.someAnswer;
-      this.features = props;
+      this.features = features;
     });
   }
 
   writing() {
-    this.fs.copy(this.templatePath('**/*'), this.destinationRoot());
+    this.fs.copy(this.templatePath('base/**/*'), this.destinationRoot(), {
+      globOptions: { dot: true },
+    });
   }
 
   features() {
+    console.log(this.features);
     if (this.features.includes('Storybook')) {
       this.log('Adding Storybook');
+      this.spawnCommand('npx', ['sb init']);
     }
   }
 
